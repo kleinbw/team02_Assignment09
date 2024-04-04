@@ -36,12 +36,18 @@ if __name__ == "__main__":
         if state_info:
             print("State found:")
             print("Name:", state_info["name"])
-            print("Postal Code:", state_info["postal"])
-            print("Capital:", state_info["capital"]["name"])
-            print("Capital Latitude:", state_info["capital"]["latitude"])
-            print("Capital Longitude:", state_info["capital"]["longitude"])
-            print("Population Density (per square km):", state_info["population"]["density_km"])
-            print("Total Population:", state_info["population"]["total"])
+            state_data_select = input("Would you like to know state info, capital info, or population info: ")
+            if state_data_select == "state info":
+                print("Postal Code:", state_info["postal"])
+                print("Capital:", state_info["capital"]["name"])
+                print("Total Population:", state_info["population"]["total"])
+            elif state_data_select == "capital info":
+                print("Capital:", state_info["capital"]["name"])
+                print("Capital Latitude:", state_info["capital"]["latitude"])
+                print("Capital Longitude:", state_info["capital"]["longitude"])
+            elif state_data_select == "population info":
+                print("Population Density (per square km):", state_info["population"]["density_km"])
+                print("Total Population:", state_info["population"]["total"])
         else:
             print("State not found.")
     else:
